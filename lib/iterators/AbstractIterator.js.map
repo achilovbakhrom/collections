@@ -1,0 +1,16 @@
+     if (entries) {
+            this.setAll(entries);
+        }
+    }
+    get size() {
+        return this.map.size;
+    }
+    entries() {
+        return new LinkedMapIterator(this.tail);
+    }
+    clear() {
+        this.map.clear();
+        this.head = null;
+        this.tail = null;
+    }
+    delete(key) {

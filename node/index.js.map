@@ -1,0 +1,23 @@
+t = this.head;
+        node.prev = null;
+        if (this.head) {
+            this.head.prev = node;
+        }
+        this.head = node;
+        if (!this.tail) {
+            this.tail = node;
+        }
+    }
+    setTail(node) {
+        node.next = null;
+        node.prev = this.tail;
+        if (this.tail) {
+            this.tail.next = node;
+        }
+        this.tail = node;
+        if (!this.head) {
+            this.head = node;
+        }
+    }
+    insert(key, value) {
+        let node = this.map.get(key)

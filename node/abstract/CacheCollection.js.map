@@ -1,0 +1,23 @@
+            this.tail = node;
+        }
+    }
+    setTail(node) {
+        node.next = null;
+        node.prev = this.tail;
+        if (this.tail) {
+            this.tail.next = node;
+        }
+        this.tail = node;
+        if (!this.head) {
+            this.head = node;
+        }
+    }
+    insert(key, value) {
+        let node = this.map.get(key);
+        if (node) {
+            node.value = value;
+            this.unlinkNode(node);
+        }
+        else {
+            node = new LinkedMapNode(key, value);
+ 
