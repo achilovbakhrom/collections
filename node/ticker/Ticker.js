@@ -1,10 +1,9 @@
-ctor(node) {
-        super();
-        this.node = node;
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+class SystemTicker {
+    now() {
+        return Date.now();
     }
-    next() {
-        if (!this.node) {
-            return { done: true };
-        }
-        const { key, value } = this.node;
-        this.node = this.nod
+}
+exports.SystemTicker = SystemTicker;
+//# sourceMappingURL=Ticker.js.map

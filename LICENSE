@@ -1,46 +1,21 @@
-urn this.map.size;
-    }
-    entries() {
-        return new LinkedMapIterator(this.tail);
-    }
-    clear() {
-        this.map.clear();
-        this.head = null;
-        this.tail = null;
-    }
-    delete(key) {
-        const node = this.map.get(key);
-        if (node) {
-            this.unlinkNode(node);
-            this.map.delete(key);
-            return true;
-        }
-        return false;
-    }
-    get(key) {
-        const node = this.map.get(key);
-        return node ? node.value : undefined;
-    }
-    has(key) {
-        return this.map.has(key);
-    }
-    set(key, value) {
-        const node = this.insert(key, value);
-        this.setHead(node);
-        return this;
-    }
-    setFirst(key, value) {
-        const node = this.insert(key, value);
-        this.setTail(node);
-        return this;
-    }
-    firstEntry() {
-        const node = this.tail;
-        return node ? [node.key, node.value] : undefined;
-    }
-    lastEntry() {
-        const node = this.head;
-        return node ? [node.key, node.value] : undefined;
-    }
-    setHead(node) {
-      
+MIT License
+
+Copyright (c) 2017 Umidbek Karimov
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.

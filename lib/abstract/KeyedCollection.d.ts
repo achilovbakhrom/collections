@@ -1,35 +1,20 @@
-        return { done: false, value: [key, value] };
-    }
+import { BaseCollection } from "./BaseCollection";
+export declare abstract class KeyedCollection<K, V> extends BaseCollection<K, V> {
+    /**
+     * Sets each [`key`, `value`] entry from `entries` in the `Collection` object. Returns the `Collection` object.
+     */
+    setAll(entries: Iterable<[K, V]>): this;
+    /**
+     * Removes any values associated to the `keys`.
+     */
+    deleteAll(keys: Iterable<K>): void;
+    /**
+     * Returns a new `Iterator` object that contains the keys for each element in the `Collection` object
+     * in insertion order.
+     */
+    keys(): IterableIterator<K>;
+    /**
+     * Returns a new `Iterator` object that contains the `values` for each element in the `Collection` object.
+     */
+    values(): IterableIterator<V>;
 }
-class LinkedMap extends SortedMap_1.SortedMap {
-    constructor(entries) {
-        super();
-        this.head = null;
-        this.tail = null;
-        this.map = new Map();
-        if (entries) {
-            this.setAll(entries);
-        }
-    }
-    get size() {
-        return this.map.size;
-    }
-    entries() {
-        return new LinkedMapIterator(this.tail);
-    }
-    clear() {
-        this.map.clear();
-        this.head = null;
-        this.tail = null;
-    }
-    delete(key) {
-        const node = this.map.get(key);
-        if (node) {
-            this.unlinkNode(node);
-            this.map.delete(key);
-            return true;
-        }
-        return false;
-    }
-    get(key) {
-        co

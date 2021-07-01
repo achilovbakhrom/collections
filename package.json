@@ -1,0 +1,64 @@
+{
+  "name": "@umidbekkarimov/collections",
+  "private": false,
+  "version": "0.0.6",
+  "description": "Collections for JavaScript",
+  "main": "./node/index.js",
+  "module": "./es/index.js",
+  "jsnext:main": "./es/index.js",
+  "browser": "./lib/index.js",
+  "typings": "./lib/index.d.ts",
+  "engines": {
+    "node": "^6.0.0 || ^7.0.0 || ^8.0.0"
+  },
+  "jest": {
+    "mapCoverage": true,
+    "transform": {
+      ".ts": "<rootDir>/node_modules/ts-jest/preprocessor.js"
+    },
+    "collectCoverageFrom": [
+      "src/**/*.ts"
+    ],
+    "testMatch": [
+      "**/src/**/*.spec.ts"
+    ],
+    "moduleFileExtensions": [
+      "ts",
+      "js"
+    ]
+  },
+  "scripts": {
+    "all": "run-s format lint cover build",
+    "test": "jest",
+    "cover": "jest --coverage --no-cache",
+    "codecov": "codecov -f ./coverage/lcov.info",
+    "lint": "tslint \"src/**/**.ts\"",
+    "format": "prettier --write --parser=typescript \"src/**/**.ts\"",
+    "build": "run-s build:*",
+    "build:es": "rimraf ./es && rollup -c ./rollup.config.js",
+    "build:lib": "rimraf ./lib && tsc --project tsconfig.lib.json",
+    "build:node": "rimraf ./node && tsc --project tsconfig.node.json",
+    "report": "opener ./coverage/lcov-report/index.html"
+  },
+  "repository": "https://github.com/umidbekkarimov/collections.git",
+  "author": "Umidbek Karimov <uma.karimov@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "tslib": "^1.7.0"
+  },
+  "devDependencies": {
+    "@types/jest": "^21.1.4",
+    "@types/node": "^8.0.46",
+    "codecov": "^2.3.1",
+    "jest": "^21.2.1",
+    "npm-run-all": "^4.0.2",
+    "opener": "^1.4.3",
+    "prettier": "^1.5.3",
+    "rimraf": "^2.6.1",
+    "rollup": "^0.50.0",
+    "rollup-plugin-typescript2": "^0.7.0",
+    "ts-jest": "^21.1.3",
+    "tslint": "^5.8.0",
+    "typescript": "^2.4.2"
+  }
+}

@@ -1,11 +1,1 @@
-node = this.node.prev;
-        return { done: false, value: [key, value] };
-    }
-}
-class LinkedMap extends SortedMap_1.SortedMap {
-    constructor(entries) {
-        super();
-        this.head = null;
-        this.tail = null;
-        this.map = new Map();
-   
+{"version":3,"file":"AbstractIterator.js","sourceRoot":"/home/travis/build/umidbekkarimov/collections/","sources":["iterators/AbstractIterator.ts"],"names":[],"mappings":";;AAAA;IAGS,CAAC,MAAM,CAAC,QAAQ,CAAC;QACtB,MAAM,CAAC,IAAI,CAAC;IACd,CAAC;CACF;AAND,4CAMC"}

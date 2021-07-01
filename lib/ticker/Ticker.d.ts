@@ -1,8 +1,6 @@
-;
-    }
-    entries() {
-        return new LinkedMapIterator(this.tail);
-    }
-    clear() {
-        this.map.clear();
-   
+export interface Ticker {
+    now(): number;
+}
+export declare class SystemTicker implements Ticker {
+    now(): number;
+}

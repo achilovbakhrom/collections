@@ -1,26 +1,15 @@
-erator {
-    constructor(node) {
-        super();
-        this.node = node;
-    }
-    next() {
-        if (!this.node) {
-            return { done: true };
-        }
-        const { key, value } = this.node;
-        this.node = this.node.prev;
-        return { done: false, value: [key, value] };
-    }
+import { KeyedCollection } from "./KeyedCollection";
+export declare abstract class SortedMap<K, V> extends KeyedCollection<K, V> {
+    /**
+     * Sets the `value` for `the` key in the as first element of `Collection` object. Returns the `Collection` object.
+     */
+    abstract setFirst(key: K, value: V): this;
+    /**
+     * Returns first value in the `Collection` object, or `undefined` if there is none.
+     */
+    firstEntry(): [K, V] | undefined;
+    /**
+     * Returns last value in the `Collection` object, or `undefined` if there is none.
+     */
+    lastEntry(): [K, V] | undefined;
 }
-class LinkedMap extends SortedMap_1.SortedMap {
-    constructor(entries) {
-        super();
-        this.head = null;
-        this.tail = null;
-        this.map = new Map();
-        if (entries) {
-            this.setAll(entries);
-        }
-    }
-    get size() {
-        return this.map.size

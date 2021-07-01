@@ -1,12 +1,9 @@
-;
-class LinkedMapNode {
-    constructor(key, value) {
-        this.key = key;
-        this.value = value;
-        this.prev = null;
-        this.next = null;
-        this.key = key;
-        this.value = value;
-    }
+import { AbstractIterator } from "./AbstractIterator";
+export declare class ObjectIterator<V> extends AbstractIterator<[string, V]> {
+    private source;
+    private iterator;
+    constructor(source: {
+        [key: string]: V;
+    });
+    next(): IteratorResult<[string, V]>;
 }
-class LinkedMapIterator extends AbstractIterator_1.AbstractIt

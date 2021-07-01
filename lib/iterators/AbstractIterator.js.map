@@ -1,16 +1,1 @@
-     if (entries) {
-            this.setAll(entries);
-        }
-    }
-    get size() {
-        return this.map.size;
-    }
-    entries() {
-        return new LinkedMapIterator(this.tail);
-    }
-    clear() {
-        this.map.clear();
-        this.head = null;
-        this.tail = null;
-    }
-    delete(key) {
+{"version":3,"file":"AbstractIterator.js","sourceRoot":"/home/travis/build/umidbekkarimov/collections/","sources":["iterators/AbstractIterator.ts"],"names":[],"mappings":";;AAAA;IAAA;IAMA,CAAC;IAHQ,2BAAC,MAAM,CAAC,QAAQ,CAAC,GAAxB;QACE,MAAM,CAAC,IAAI,CAAC;IACd,CAAC;IACH,uBAAC;AAAD,CAAC,AAND,IAMC;AANqB,4CAAgB"}
