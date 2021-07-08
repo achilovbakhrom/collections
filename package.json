@@ -9,7 +9,7 @@
   "browser": "./lib/index.js",
   "typings": "./lib/index.d.ts",
   "engines": {
-    "node": "^6.0.0 || ^7.0.0 || ^8.0.0"
+    "node": "^6.0.0 || ^7.0.0 || ^8.0.0 || ^16.4.0"
   },
   "jest": {
     "mapCoverage": true,
